@@ -19,7 +19,8 @@
 
         body {
             margin: 0;
-            padding: 0;
+            padding: 20px 0;
+            /* Added padding for scrolling */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -27,8 +28,12 @@
             background-color: var(--primary-blue);
             background-image: radial-gradient(circle at 20% 30%, var(--secondary-blue) 0%, transparent 20%),
                 radial-gradient(circle at 80% 70%, var(--secondary-blue) 0%, transparent 20%);
+            background-attachment: fixed;
+            /* Background stays still while scrolling */
             font-family: 'Comfortaa', cursive;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
+            /* Enable vertical scrolling */
         }
 
         .container {
