@@ -35,14 +35,14 @@
             text-align: center;
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(10px);
-            padding: 3rem;
+            padding: 2rem;
             border-radius: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 100, 0.1);
-            max-width: 95%;
-            width: fit-content;
-            min-width: 450px;
+            width: 90%;
+            max-width: 500px;
             animation: fadeIn 1s ease-out;
             transition: all 0.5s ease;
+            margin: 20px;
         }
 
         @keyframes fadeIn {
@@ -58,37 +58,40 @@
         }
 
         .image-container {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .image-container img {
-            max-width: 300px;
-            width: 100%;
+            max-width: 100%;
+            height: auto;
             border-radius: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
         }
 
         h1 {
             color: var(--text-color);
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 5vw, 1.8rem);
             line-height: 1.4;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .buttons {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 40px;
-            min-height: 250px;
+            gap: 20px;
+            min-height: 200px;
             position: relative;
             width: 100%;
+            flex-wrap: wrap;
+            /* Allow wrapping on very small screens or large scales */
         }
 
         button {
             border: none;
-            padding: 12px 30px;
-            font-size: 1.2rem;
+            padding: 12px 25px;
+            font-size: clamp(1rem, 4vw, 1.2rem);
             font-weight: 700;
             border-radius: 50px;
             cursor: pointer;
@@ -96,14 +99,17 @@
             font-family: 'Comfortaa', cursive;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             color: white;
+            white-space: nowrap;
         }
 
         #yesBtn {
             background-color: var(--yes-green);
+            z-index: 2;
         }
 
         #noBtn {
             background-color: var(--no-red);
+            z-index: 1;
         }
 
         button:active {
@@ -149,6 +155,17 @@
             font-size: 2rem;
             margin-bottom: 1rem;
         }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .buttons {
+                min-height: 150px;
+                gap: 15px;
+            }
+        }
     </style>
 </head>
 
@@ -157,7 +174,7 @@
     <div class="container" id="mainContainer">
         <div class="image-container">
             <!-- User will add their photo here -->
-            <img src="WhatsApp Image 2026-02-11 at 15.50.01.jpeg" id="displayImg">
+            <img src="photo.jpeg" id="displayImg">
         </div>
         <h1 id="question">Бул бала чорт па?</h1>
 
